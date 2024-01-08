@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: postgres_api_frete
+    image: postgres
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "abc123456"
+      POSTGRES_DB: frete
+    volumes:
+      - ./data:/data/postgres
+    ports:
+      - "5432:5432"
+
+  app:
+    container_name: api_frete
+    build: .
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/app

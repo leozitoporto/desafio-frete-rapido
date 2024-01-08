@@ -1,0 +1,3 @@
+export const queryMetric = `SELECT carrier, COUNT(carrier) as results, SUM(final_price) as total_price, AVG(final_price) as avg_price, MIN(final_price) as min_price, MAX(final_price) as max_price FROM quotes GROUP BY carrier ORDER BY results DESC`
+
+export const queryMetricLast = (number: number) => `SELECT carrier, COUNT(carrier) as results, SUM(final_price) as total_price, AVG(final_price) as avg_price, MIN(final_price) as min_price, MAX(final_price) as max_price FROM quotes GROUP BY carrier ORDER BY results DESC LIMIT ${number}`
