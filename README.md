@@ -10,7 +10,9 @@ docker-compose up
 
 ```
 
-## Para executar os testes rodar o seguinte comando
+## Testes
+
+Para executar os testes executar o comando abaixo (na pasta raíz do projeto):
 
 ```bash
 
