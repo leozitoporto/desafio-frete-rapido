@@ -6,8 +6,6 @@ Execute o comando abaixo (no diretório raiz do projeto):
 
 ```bash
 
-npm i
-
 docker-compose up
 
 ```
