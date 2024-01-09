@@ -2,22 +2,22 @@ version: '3'
 
 services:
   postgres:
-    container_name: postgres_api_frete
+    container_name: ${HOST_POSTGRES}
     image: postgres
     environment:
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'abc123456'
-      POSTGRES_DB: frete
+      POSTGRES_USER: ${USER_POSTGRES}
+      POSTGRES_PASSWORD: ${PASSWORD_POSTGRES}
+      POSTGRES_DB: ${DATABASE_POSTGRES}
     volumes:
       - ./data:/data/postgres
     ports:
-      - '5432:5432'
+      - '${PORT_POSTGRES:-5432}:5432'
 
   app:
     container_name: api_frete
     image: node
     command: bash -c "cd /usr/app && npm install && npm run dev"
     ports:
-      - '3000:3000'
+      - '${PORT:-3000}:3000'
     volumes:
       - .:/usr/app
